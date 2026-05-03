@@ -649,7 +649,7 @@ void NvUtilInit_hook()
         memset(g_pszStorage, 0, 512); 
         strcpy(g_pszStorage, novoCaminho);
         
-        FLog("Novo StorageRoot definido para: %s", g_pszStorage);
+       // FLog("Novo StorageRoot definido para: %s", g_pszStorage);
 	}
     CLoader::loadSetting();
 
