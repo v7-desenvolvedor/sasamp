@@ -19,8 +19,8 @@ static void ClearBackslashN(char *pStr, size_t size) {
 
 void CSettings::toDefaults(int iCategory)
 {
-	char buff[0x7F];
-	sprintf(buff, "%sSAMP/settings.ini", g_pszStorage);
+	char buff[0x100]; // Aumentei o tamanho do buffer para garantir que o caminho caiba
+    sprintf(buff, "/storage/emulated/0/sampdata/files/SAMP/settings.ini");
 
 	FILE *pFile = fopen(buff, "w");
 
