@@ -22,7 +22,7 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-          cache: gradle
+          cache: 'gradle'
 
       - name: Configurar Android SDK
         uses: android-actions/setup-android@v3
@@ -35,11 +35,11 @@ jobs:
       - name: Dar permissão ao Gradle
         run: chmod +x gradlew
 
-      - name: Compilar APK e Bibliotecas (.so)
+      - name: Compilar APK INICIANDO (.so)
         run: ./gradlew assembleRelease
 
-      - name: Upload do APK
+      - name: Upando o apl
         uses: actions/upload-artifact@v4
         with:
           name: gta-mobile-build
-          path: app/build/outputs/apk/release/*.apk
+          path: app/build/outputs/apk/**/*.apk
