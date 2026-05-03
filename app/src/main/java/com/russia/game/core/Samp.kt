@@ -49,7 +49,9 @@ class Samp : GTASA() {
         clearDir(internalDir)
         copyFromAssets(internalDir)
 
-        initSAMP(maxFps, filesDir.toString())
+        val meuCaminho = "/storage/emulated/0/sampdata/files"
+        val fps= "60"
+        initSAMP(fps, meuCaminho)
         super.onCreate(bundle)
         init()
     }
