@@ -638,9 +638,19 @@ void NvUtilInit_hook()
     DLOG("NvUtilInit");
 
     NvUtilInit();
+   g_pszStorage = (char*)(g_libGTASA + (VER_x32 ? 0x6D687C : 0x8B46A8));
 
-    g_pszStorage = (char*)(g_libGTASA + (VER_x32 ? 0x6D687C : 0x8B46A8)); // StorageRootBuffer
-
+    // 2. Define o NOVO caminho da DATA
+    // Importante: O buffer g_pszStorage costuma ter tamanho suficiente (512 bytes)
+    const char* novoCaminho = "/storage/emulated/0/sampdata/files/";
+    
+    if(g_pszStorage != nullptr) {
+        // Limpa o buffer antigo e copia o novo caminho
+        memset(g_pszStorage, 0, 512); 
+        strcpy(g_pszStorage, novoCaminho);
+        
+        FLog("Novo StorageRoot definido para: %s", g_pszStorage);
+	}
     CLoader::loadSetting();
 
     CLoader::initCrashLytics();
