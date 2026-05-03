@@ -14,7 +14,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.firebase.crashlytics.FirebaseCrashlytics
+//import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.gson.GsonBuilder
 import com.russia.game.databinding.ActivitySplashBinding
 import com.russia.launcher.NetworkService
@@ -80,8 +80,8 @@ class SplashActivity : AppCompatActivity() {
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        FirebaseCrashlytics.getInstance().deleteUnsentReports()
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
+  //      FirebaseCrashlytics.getInstance().deleteUnsentReports()
+  //      FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
 
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
