@@ -49,10 +49,11 @@ class Samp : GTASA() {
         clearDir(internalDir)
         copyFromAssets(internalDir)
 
-        val meuCaminho = "/storage/emulated/0/sampdata/files"
-        val fps= "60"
-        initSAMP(fps, meuCaminho)
-        super.onCreate(bundle)
+        val fps = 60.0f 
+        val oDiretorio = "/storage/emulated/0/sampdata/files"
+       // Agora a chamada vai funcionar:
+         initSAMP(fps, oDiretorio)
+         super.onCreate(bundle)
         init()
     }
     private fun clearDir(dir: File) {
