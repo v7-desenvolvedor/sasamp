@@ -20,7 +20,7 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.firebase.crashlytics.FirebaseCrashlytics
+//import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.russia.game.R
 import com.russia.game.gui.hud.HudManager
 import com.russia.launcher.async.task.CacheChecker.isGameCacheValid
@@ -134,8 +134,8 @@ class Samp : GTASA() {
     }
 
     fun exitGame() {
-        FirebaseCrashlytics.getInstance().deleteUnsentReports()
-        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false)
+    //    FirebaseCrashlytics.getInstance().deleteUnsentReports()
+    //    FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(false)
         finishAndRemoveTask()
         System.exit(0)
     }
